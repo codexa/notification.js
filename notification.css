@@ -1,0 +1,156 @@
+.notification-container {
+  width: 300px;
+  z-index: 500;
+  position: fixed;
+  right: 2px;
+  top: 2px;  
+  color: white;
+  text-align: left;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.notification-container .notification-close-button {
+  height: 25px;
+  width: 25px;
+  padding: 2px;
+  margin: 5px;  
+  border-radius: 16px;
+  border: 2px solid white;  
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;  
+  background: black;  
+  transition: all .3s;
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-shadow: none;
+  box-shadow: none;
+  outline: none;
+}  
+
+.notification-container .notification-close-button:hover {
+  text-decoration: none;  
+  color: black;  
+  background: #ccc;
+}
+
+.notification-container .notification {
+  opacity: 0;
+  margin: 5px;
+  min-height: 15px;
+  padding: 10px;
+  overflow: hidden;  
+  position: relative;
+  right: 0;
+  box-shadow: 0px 0px 30px black;  
+  border: 2px solid white;
+  border-radius: 10px;  
+  text-overflow: ellipsis;  
+  background: rgba(0,0,0,.9);  
+  transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+  transition: opacity .3s, transform .3s;
+    -moz-transition: opacity .3s, -moz-transform .3s;
+    -webkit-transition: opacity .3s, -webkit-transform .3s;
+    -o-transition: opacity .3s, -o-transform .3s;
+    -ms-transition: opacity .3s, -ms-transform .3s;
+}
+
+.notification-container .notification.shown {
+  opacity: 1;
+  transform: none;
+    -moz-transform: none;
+    -webkit-transform: none;
+    -o-transform: none;
+    -ms-transform: none;
+  animation: notificationShow .2s;
+  -moz-animation: notificationShow .2s;
+  -webkit-animation: notificationShow .2s;
+  -o-animation: notificationShow .2s;  
+}
+
+.notification-container .notification img {
+  float: left;
+  max-height: 50px;
+  max-width: 50px;
+  margin-right: 10px;
+}
+
+.notification-container .notification h3 {
+  text-align: left;
+  margin: 0 28px 0 0;
+  font-weight: bold;
+  color: inherit;
+}
+
+.notification-container .notification p {
+  text-align: left;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 5px 0 0 0;
+}
+
+
+/* Animations */
+@keyframes notificationShow
+{
+  from {opacity: 0;}
+  to {opacity: .9;}
+}
+
+@-moz-keyframes notificationShow
+{
+  from {opacity: 0;}
+  to {opacity: .9;}
+}
+
+@-webkit-keyframes notificationShow
+{
+  from {opacity: 0;}
+  to {opacity: .9;}
+}
+
+@-o-keyframes notificationShow
+{
+  from {opacity: 0;}
+  to {opacity: .9;}
+}
+
+@-ms-keyframes notificationShow
+{
+  from {opacity: 0;}
+  to {opacity: .9;}
+}
+
+
+/* Responsive */
+@media (max-width: 766px) {
+  .notification-container {
+    width: 100%;
+    right: 0px;
+    left: 0px;
+  }
+  .notification-container .notification {
+    margin: 0px;
+    border-radius: 0px;
+    border-left: none;
+    border-right: none;
+    transform: translateY(-100%);
+      -moz-transform: translateY(-100%);
+      -webkit-transform: translateY(-100%);
+      -o-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+  }
+  .notification-container .notification + .notification {
+    border-top: none;
+  }
+}
