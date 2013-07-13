@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>  
+<head>
+  <!-- Meta -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="notification.js is an easy way to include web notifications in your app." />
+  <meta name="keywords" content="notification.js, notifications" />
+  <title>notification.js</title>
+  
+  <!-- Scripts -->
+  <script type="text/javascript" src="https://raw.github.com/Codexa/notification.js/master/notification.js"></script>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="stylesheet" type="text/css" href="notification.css" />
+</head>
+<body> 
+  <noscript>Scripts must be enabled to use notification.js.</noscript>
+  <header>
+    <div class="container">
+      <span class="brand">notification.js</span>
+    </div>
+  </header>
+  <div class="container page">
+    <h1>Web Notifications just couldn't be easier!</h1>
+    <button onClick="notification.show('This notification has a title...', '...and content!')">Both</button>
+    <button onClick="notification.show(null, 'This notification has plenty of content, but no title.')">No title</button>
+    <button onClick="notification.show('No content.  Waaa ;(')">No content</button>
+    <button onClick="notification.show()">Neither</button>
+    <button onClick="notification.show('Look at this', '...spiffy notification!', 'https://dl.dropboxusercontent.com/s/qi6dyqfz98x8wen/codexa.png?token_hash=AAHYJ-u_kXPueDissEaprMNhxRKlfxTQcHkeGTpuZsaMrQ&dl=1')">An Icon!</button>
+    
+    <br><br><h2>How it works</h2>
+    <p>Many websites and apps need to alert the user to changes in a minimalistic, yet attention-grabbing way.
+    The Notifications API that was introduced in Firefox 4 provides the ideal solution to this issue.
+    Unfortunately, the API never became standardized, and because of that, is only supported in Firefox.</p>
+    <p><i>Enter notification.js</i></p>
+    <p>notification.js allows websites to harness the power of notifications by just including a 
+    single script and stylesheet in their code.  After that is done, the website can simply call the <code>notification.show()</code>
+    function, and notification.js will either delegate the notification to the Notifications API (if the user is using Firefox 4+),
+    or it will create a notification on top of the actual website.
+    </p>
+    <p>notification.js supports all devices, and most popular browsers.</p>
+    
+    <br><h2>How to use it</h2>
+    <ol>
+      <li>Download it from <a href="https://github.com/Codexa/notification.js/releases/download/v0.1/notification.js-0.1.zip" target="_blank">here</a>.</li>
+    </ol>
+  </div>
+  <footer>
+    <p>notification.js was made possible by Joshua Smith, with support from <a href="http://codexa.org/">Codexa</a>.</p>
+  </footer>  
+</body>
+</html>
