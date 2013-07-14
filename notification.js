@@ -44,17 +44,19 @@ notification.create = function (title, content, icon) {
   
   // Create notification node
   var tempNode = document.createElement('div');
-  var tempNodeImage = document.createElement('img');
+  var tempNodeCloseButton = document.createElement('button');
   var tempNodeTitle = document.createElement('h3');
   var tempNodeContent = document.createElement('p');
-  var tempNodeCloseButton = document.createElement('button');
+  if (icon && icon != '' && icon != 0) {
+    var tempNodeImage = document.createElement('img');
+    tempNodeImage.src = icon;
+    tempNode.appendChild(tempNodeImage);
+  }
   tempNodeCloseButton.textContent = 'X';
   tempNodeCloseButton.classList.add('notification-close-button');
-  tempNodeImage.src = icon;
   tempNodeTitle.textContent = title;
   tempNodeContent.textContent = content;
   tempNode.appendChild(tempNodeCloseButton);
-  tempNode.appendChild(tempNodeImage);
   tempNode.appendChild(tempNodeTitle);
   tempNode.appendChild(tempNodeContent);
   tempNode.classList.add('notification');
