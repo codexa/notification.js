@@ -22,6 +22,13 @@ notification.show = function (title, content, icon) {
     // Use built-in notification handler
     currentNotification = navigator.mozNotification.createNotification(title, content, icon);
     currentNotification.show();
+    currentNotification.onclose = function() {
+      document.title = document.title.replace(/\[[0-9]{1,}\]/i, '');
+      if (notificationCount > 0) {
+        document.title = ('[' + notificationCount + '] ' + document.title);      
+      }      
+    };
+    return currentNotification;
   } else {
     // Use polyfill
     currentNotification = notification.create(title, content, icon);
@@ -30,6 +37,7 @@ notification.show = function (title, content, icon) {
     setTimeout(function () {
       notification.remove(currentNotification);
     }, 5000);
+    return currentNotification;
   }
   notificationCount = (notificationCount + 1);
   document.title = document.title.replace(/\[[0-9]{1,}\]/i, '');
