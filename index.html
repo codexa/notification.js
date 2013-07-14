@@ -29,7 +29,7 @@
     <button onClick="notification.show()">Neither</button>
     <button onClick="notification.show('Look at this', '...spiffy notification!', 'https://dl.dropboxusercontent.com/s/qi6dyqfz98x8wen/codexa.png?token_hash=AAHYJ-u_kXPueDissEaprMNhxRKlfxTQcHkeGTpuZsaMrQ&dl=1')">An Icon!</button>
     
-    <br><br><h2>How it works</h2>
+    <br><br><h2>How  works</h2>
     <p>Many websites and apps need to alert the user to changes in a minimalistic, yet attention-grabbing way.
     The Notifications API that was introduced in Firefox 4 provides the ideal solution to this issue.
     Unfortunately, the API never became standardized, and because of that, is only supported in Firefox.</p>
@@ -44,6 +44,15 @@
     <br><h2>How to use it</h2>
     <ol>
       <li>Download it from <a href="https://github.com/Codexa/notification.js/releases/download/v0.1/notification.js-0.1.zip" target="_blank">here</a>.</li>
+      <li>Extract the zip, and put the files in a folder on your website.</li>
+      <li>In the <code>&lt;head&gt;</code> section of your site's code, paste this:
+      <p style="font-size: 14px;"><code>
+        &lt;!-- notification.js --&gt;
+        <br>&lt;script type=&quot;text/javascript&quot; src=&quot;http://site.org/folder-containing-files/notification.js&quot;&gt;&lt;/script&gt;
+        <br>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://site.org/folder-containing-files/notification.css&quot; /&gt;  
+      </code></p>
+      </li>
+      <li>Correct the urls to point to the notification.js files.</li>
     </ol>
   </div>
   <footer>
