@@ -23,6 +23,7 @@ notification.show = function (title, content, icon) {
     currentNotification = navigator.mozNotification.createNotification(title, content, icon);
     currentNotification.show();
     currentNotification.onclose = function() {
+      alert('Then that isn\'t the bug');
       document.title = document.title.replace(/\[[0-9]{1,}\]/i, '');
       if (notificationCount > 0) {
         document.title = ('[' + notificationCount + '] ' + document.title);      
@@ -40,7 +41,7 @@ notification.show = function (title, content, icon) {
   notificationCount = (notificationCount + 1);
   document.title = document.title.replace(/\[[0-9]{1,}\]/i, '');
   document.title = ('[' + notificationCount + '] ' + document.title);
-    return currentNotification;
+  return currentNotification;
 };
 
 notification.create = function (title, content, icon) {
