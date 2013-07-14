@@ -32,7 +32,7 @@ notification.show = function (title, content, icon) {
     }, 5000);
   }
   notificationCount = (notificationCount + 1);
-  document.title = document.title.replace(/\[[0-9]{1}\]/i, '');
+  document.title = document.title.replace(/\[[0-9]{1,}\]/i, '');
   document.title = ('[' + notificationCount + '] ' + document.title);
 };
 
@@ -72,7 +72,7 @@ notification.remove = function (node) {
     setTimeout(function () {
       notificationContainer.removeChild(node);
       notificationCount = (notificationCount - 1);
-      document.title = document.title.replace(/\[[0-9]{1}\]/i, '');
+      document.title = document.title.replace(/\[[0-9]{1,}\]/i, '');
       if (notificationCount > 0) {
         document.title = ('[' + notificationCount + '] ' + document.title);      
       }
