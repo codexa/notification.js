@@ -1,5 +1,5 @@
 /* Globals */
-var notification = {}, notificationContainer;
+var notification = {}, notificationContainer, notificationCount = 0;
 
 /* Init */
 window.addEventListener('DOMContentLoaded', function init() {
@@ -31,6 +31,9 @@ notification.show = function (title, content, icon) {
       notification.remove(currentNotification);
     }, 5000);
   }
+  notificationCount = (notificationCount + 1);
+  document.title = document.title.replace(/\[[0-9999999]\]/i, '');
+  document.title = ('[' + notificationCount + '] ' + document.title);
 };
 
 notification.create = function (title, content, icon) {
@@ -68,6 +71,11 @@ notification.remove = function (node) {
     node.classList.remove('shown');
     setTimeout(function () {
       notificationContainer.removeChild(node);
+      notificationCount = (notificationCount - 1);
+      document.title = document.title.replace(/\[[0-9999999]\]/i, '');
+      if (notificationCount > 0) {
+        document.title = ('[' + notificationCount + '] ' + document.title);      
+      }
     }, 300);
   }
 }
